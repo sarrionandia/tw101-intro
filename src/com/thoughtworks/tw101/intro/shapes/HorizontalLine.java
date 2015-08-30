@@ -3,7 +3,7 @@ package com.thoughtworks.tw101.intro.shapes;
 /**
  * Created by Tito on 30/08/2015.
  */
-public class HorizontalLine extends Line {
+public class HorizontalLine extends Shape {
 
     public HorizontalLine(int length) {
         StringBuilder lineBuilder = new StringBuilder();
@@ -11,7 +11,7 @@ public class HorizontalLine extends Line {
         for (int i=0; i<length; i++) {
             lineBuilder.append("*");
         }
-        line = lineBuilder.toString();
+        shapeString = lineBuilder.toString();
     }
 
 }
