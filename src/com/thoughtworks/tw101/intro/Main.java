@@ -28,5 +28,7 @@ public class Main {
         NameDiamond nameDiamond = new NameDiamond(4, "Roberto");
         System.out.println(nameDiamond);
 
+        FizzBuzz.fizzBuzz();
+
     }
 }
