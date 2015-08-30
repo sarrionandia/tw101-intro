@@ -14,7 +14,8 @@ public class Main {
         System.out.println();
         printRightAngleTriangle(6);
         System.out.println();
-        printIsoscelesTriangle(4);
+        System.out.println(isoscelesTriangle(4));
+        System.out.println(diamond(8));
 
     }
 
@@ -57,10 +58,11 @@ public class Main {
     }
 
     /**
-     * Print a centered triangle with a given height
-     * @param height The height of the triangle in console lines
+     * Return a centered triangle with a given height
+     * @param height The height of the triangle in console line
      */
-    private static void printIsoscelesTriangle(int height) {
+    private static String isoscelesTriangle(int height) {
+        StringBuilder triangle = new StringBuilder();
         int baseWidth = triangleLineWidth(height);
 
         for (int row=1; row<=height; row++) {
@@ -71,18 +73,19 @@ public class Main {
             Arrays.fill(charArray, ' ');
             String padding = new String(charArray);
 
-            //Print leading padding
-            System.out.print(padding);
+            //Add leading padding
+            triangle.append(padding);
 
-            //Print asterisks
+            //Add asterisks
             for(int i=0; i<lineWidth; i++) {
-                System.out.print('*');
+                triangle.append('*');
             }
 
-            //Print trailing padding
-            System.out.print(padding);
-            System.out.println();
+            //Add trailing padding
+            triangle.append(padding);
+            triangle.append('\n');
         }
+        return triangle.toString();
     }
 
     /**
@@ -95,5 +98,22 @@ public class Main {
     }
 
 
+    private static String diamond(int height) {
+        StringBuilder diamond = new StringBuilder();
+
+        String top = isoscelesTriangle(height/2);
+        diamond.append(top);
+
+        StringBuilder reverse = new StringBuilder(top).reverse();
+        //Remove the initial newline
+        reverse.deleteCharAt(0);
+
+        //Remove the duplicated center line
+        String bottom = reverse.toString().substring(reverse.indexOf("\n")+1);
+
+        diamond.append(bottom);
+
+        return diamond.toString();
+    }
 
 }
