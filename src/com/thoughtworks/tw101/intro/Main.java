@@ -98,6 +98,11 @@ public class Main {
     }
 
 
+    /**
+     * Return a diamond of a specified height
+     * @param height The height of the diamond in console lines
+     * @return The diamond
+     */
     private static String diamond(int height) {
         StringBuilder diamond = new StringBuilder();
 
