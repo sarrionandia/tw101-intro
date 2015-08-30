@@ -5,8 +5,12 @@ public class Main {
     public static void main(String[] args) {
 
         printAsterisk();
+        System.out.println();
         printHorizontalLine(8);
+        System.out.println();
         printVerticalLine(5);
+        System.out.println();
+        printRightAngleTriangle(6);
 
     }
 
@@ -36,4 +40,16 @@ public class Main {
     }
 
 
+    /**
+     * Print a right angled triangle
+     * @param height The height of the triangle (in console lines)
+     */
+    private static void printRightAngleTriangle(int height) {
+        for (int row=1; row<=height; row++) {
+            for (int col=0; col<row; col++) {
+                System.out.print('*');
+            }
+            System.out.println();
+        }
+    }
 }
