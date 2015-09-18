@@ -30,5 +30,7 @@ public class Main {
 
         FizzBuzz.fizzBuzz();
 
+        System.out.println(PrimeFactors.primeFactors(30));
+
     }
 }
